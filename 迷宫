@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+int main()
+{
+	printf("欢迎来到迷宫小游戏！\n");
+	printf("操作方式：w为向上走，s为向下走，a为向左走，d为向右走\n");
+	char mi[100][100]={"0#*********",
+		               "***###*###*",
+					   "###**#****#",
+					   "*#**###**#*",
+				 	   "***********",
+				       "#####*##*##",
+					   "**#*****#*E",
+					   "***#*###**#",
+					   "*#*********"};
+	int i,x=0,y=0,p=6,q=10;
+	char ch; 
+	for(i=0;i<=8;i++)
+	{
+		puts(mi[i]);
+	}
+	while(x!=p||y!=q)
+	{
+		ch=getch();
+		if(ch=='s')
+		{
+			if(mi[x+1][y]!='#')
+			{
+				mi[x][y]='*';
+				x++;
+				mi[x][y]='0';
+			}
+		}
+		if(ch=='w')
+		{
+			if(mi[x-1][y]!='#')
+			{
+				mi[x][y]='*';
+				x--;
+				mi[x][y]='0';
+			}
+		}
+		if(ch=='a')
+		{
+			if(mi[x][y-1]!='#')
+			{
+				mi[x][y]='*';
+				y--;
+				mi[x][y]='0';
+			}
+		}
+		if(ch=='d')
+		{
+			if(mi[x][y+1]!='#')
+			{
+				mi[x][y]='*';
+				y++;
+				mi[x][y]='0';
+			}
+		}
+		system("cls");
+		for(i=0;i<=8;i++)
+		{
+			puts(mi[i]);
+		}
+	}
+	system("cls");
+    printf("可恶！让你活了下来\n");
+	return 0;
+}
+
+
+
