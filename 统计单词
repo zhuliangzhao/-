@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[100];
+	char b[20];
+	gets(a);
+	strlwr(a);
+	printf("请输入您想要查询的单词\n");
+	gets(b);
+	char *p=a;
+	char *q=b;
+	char *t;
+	t=q;
+	int count=0;
+	while(*p!='\0')
+	{
+		if(*p==*t)
+		{
+			t++;
+		}
+		else
+		{
+			t=q;
+		}
+		p++;
+		if(*t=='\0')
+		{
+			count++;
+			t=q;
+		}
+	}
+	printf("%d\n",count);
+	return 0;
+}
