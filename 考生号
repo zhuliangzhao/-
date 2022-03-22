@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int i,n,m,a[1001]={0},s1,s2;
+	char c[1001][17]={0},num[17]={0};
+	scanf("%d",&n);
+	for(i=0; i<n; i++)
+	{
+		scanf("%s%d%d",num,&s1,&s2);
+		strcpy(c[s1],num);
+		a[s1]=s2;
+	}
+	scanf("%d",&m);
+	for(i=0; i<m; i++)
+	{
+		scanf("%d",&s1);
+		printf("%s %d\n",c[s1],a[s1]);
+	}
+	return 0;
+}
